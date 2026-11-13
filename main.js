@@ -55,9 +55,13 @@ window.addEventListener('scroll', () => {
 onScroll();
 
 // ---------- Texte animé (Typed.js) ----------
+const isEN = document.documentElement.lang === 'en';
+
 if (typeof Typed !== 'undefined' && document.querySelector('.typed-text')) {
     new Typed('.typed-text', {
-        strings: ['Laravel', 'Full Stack Web', 'de plateformes SaaS', 'Génie logiciel'],
+        strings: isEN
+            ? ['Laravel', 'Full-stack web', 'SaaS platforms', 'Software engineering']
+            : ['Laravel', 'Full Stack Web', 'de plateformes SaaS', 'Génie logiciel'],
         typeSpeed: 70,
         backSpeed: 40,
         backDelay: 1500,
@@ -116,7 +120,9 @@ form.addEventListener('submit', e => {
         + '?subject=' + encodeURIComponent(d.get('sujet'))
         + '&body=' + encodeURIComponent(body);
     window.location.href = url;
-    note.textContent = 'Votre messagerie s\'ouvre. Il ne reste qu\'à cliquer sur « Envoyer ».';
+    note.textContent = isEN
+        ? 'Your email app is opening. Just click Send.'
+        : 'Votre messagerie s\'ouvre. Il ne reste qu\'à cliquer sur « Envoyer ».';
 });
 
 // ---------- Année du copyright ----------

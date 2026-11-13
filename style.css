@@ -238,6 +238,23 @@ section {
     align-items: center;
 }
 
+.lang-switch {
+    height: 42px;
+    padding: 0 .9rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass);
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.lang-switch:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
 .icon-btn {
     width: 42px;
     height: 42px;
