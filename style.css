@@ -205,11 +205,17 @@ section {
     color: var(--primary);
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
 .navbar .nav-link {
     font-size: 1rem;
     font-weight: 500;
-    margin-left: 1.8rem;
+    margin-left: 1rem;
     position: relative;
+    white-space: nowrap;
 }
 
 .navbar .nav-link::after {
@@ -1275,6 +1281,34 @@ textarea:focus {
     }
 }
 
+/* Menu burger dès que la barre ne tient plus en une ligne */
+@media (max-width: 1260px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: .5rem 5% 1rem;
+        background: var(--bg-darker);
+        border-bottom: 1px solid var(--glass-border);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar .nav-link {
+        display: block;
+        margin: 1.2rem 0;
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 992px) {
     .header {
         padding: 1rem 5%;
@@ -1394,6 +1428,24 @@ textarea:focus {
 }
 
 @media (max-width: 560px) {
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .header-actions {
+        gap: .4rem;
+    }
+
+    .icon-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .lang-switch {
+        height: 38px;
+        padding: 0 .7rem;
+    }
+
     .input-group {
         flex-direction: column;
         gap: 0;
